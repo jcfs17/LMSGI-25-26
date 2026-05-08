@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú Desplegable</title>
+    <style>
+        ul { list-style: none; padding: 0; margin: 0; background: #333; }
+        li { position: relative; }
+        a {
+            display: block;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+        }
+        li:hover { background: #444; }
+        ul ul {
+            display: none;
+            position: absolute;
+            background: #444;
+            top: 100%;
+            left: 0;
+        }
+        li:hover ul { display: block; }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li>
+            <a href="#">Servicios</a>
+            <ul>
+                <li><a href="#">Diseño Web</a></li>
+                <li><a href="#">Programación</a></li>
+                <li><a href="#">SEO</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+</body>
+</html>
