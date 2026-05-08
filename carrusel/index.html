@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrusel</title>
+    <style>
+        .carrusel {
+            width: 400px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .imagenes {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        img {
+            width: 400px;
+            height: 250px;
+            object-fit: cover;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Carrusel</h1>
+
+    <div class="carrusel">
+        <div class="imagenes" id="imagenes">
+            <img src="https://picsum.photos/400/250?1">
+            <img src="https://picsum.photos/400/250?2">
+            <img src="https://picsum.photos/400/250?3">
+        </div>
+    </div>
+
+    <div style="text-align:center;">
+        <button onclick="anterior()">Anterior</button>
+        <button onclick="siguiente()">Siguiente</button>
+    </div>
+
+    <script>
+        let index = 0;
+        function actualizar() {
+            document.getElementById("imagenes").style.transform = `translateX(${-400 * index}px)`;
+        }
+        function siguiente() {
+            index = (index + 1) % 3;
+            actualizar();
+        }
+        function anterior() {
+            index = (index - 1 + 3) % 3;
+            actualizar();
+        }
+    </script>
+</body>
+</html>
